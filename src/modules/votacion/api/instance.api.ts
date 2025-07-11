@@ -20,4 +20,19 @@ instance.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
+export const getPapeletaHabilitada = () => {
+  return instance.get('/papeletas/habilitada/');
+};
+
+export const registrarVoto = (papeletaId: number, candidatoId: number) => {
+  return instance.post('/votos/', {
+    papeleta: papeletaId,
+    candidato_id: candidatoId,
+  });
+};
+
+export const getResultados = () => {
+  return instance.get('/resultados/');
+};
+
 export default instance; 
