@@ -32,6 +32,7 @@ const ValidarIdentidadPage: React.FC = () => {
 
     const handleHabilitar = async () => {
         if (!votante) return;
+        await habilitarPapeleta(ci);
     };
 
     return (
